@@ -1,0 +1,49 @@
+# Python
+Show that List and Dictionaries are mutable in nature.
+#Mutable means we can changed (“mutated”).
+#An immutable means is read-only; it cannot be changed.
+>>>a=1
+>>>b=a
+>>> id(a)
+4547990592
+>>> id(b)
+4547990592
+ >>> id(1)
+4547990592
+#Notice id() for all of them is same. id() basically returns an integer which corresponds to the object’s memory location.(b → a → 1 → 4547990592)
+Now, let’s increment the value of “a” by 1 so that we have new integer object → 2.
+>>> a=a+1
+>>> id(a)
+4547990624
+ >>> id(b)
+4547990592
+ >>> id(2)
+4547990624
+#Notice how id() of variable “a” changed, “b” and “1” are still same.
+b → 1 → 4547990592
+a → 2 → 4547990624
+#The location to which “a” was pointing has changed ( from 4547990592 → 4547990624). Object “1” was never modified. Immutable objects doesn’t allow modification after creation. If you create n different integer values, each will have a different constant hash value.
+but in Mutable objects can change their value but keep their id() like list, dictionary,set.
+>>> x=[1,2,3]
+>>> y=x
+>>> id(x)
+4583258952
+ >>> id(y)
+4583258952
+y → x → [1,2,3] → 4583258952
+Now, lets change the list
+>>> x.pop()
+>>> x
+[1,2]
+ >>> id(x)
+4583258952
+ >>> id(y)
+4583258952
+y → x → [1,2] → 4583258952
+#x and y are still pointing to the same memory location even after actual list is changed.
+>>>>>> x={1,2,3}
+>>> id(x)
+66862184
+#Here,we can see from the above example that whenever we changes the values in List and Dictionaries but they pointing to the same memory location even after actual list and dictionaries were changed.
+#Hence proved that List and Dictionaries are Mutable in Nature.
+Thank You :)
