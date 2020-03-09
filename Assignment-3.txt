@@ -24,6 +24,7 @@ b → 1 → 4547990592
 a → 2 → 4547990624
 #The location to which “a” was pointing has changed ( from 4547990592 → 4547990624). Object “1” was never modified. Immutable objects doesn’t allow modification after creation. If you create n different integer values, each will have a different constant hash value.
 but in Mutable objects can change their value but keep their id() like list, dictionary,set.
+#LIST
 >>> x=[1,2,3]
 >>> y=x
 >>> id(x)
@@ -44,6 +45,22 @@ y → x → [1,2] → 4583258952
 >>>>>> x={1,2,3}
 >>> id(x)
 66862184
+#DICTIONARIES
+>>> k={1:'English',2:'Hindi',3:'Bangali',4:'Tamil',5:'MIL'}
+>>> k
+{1: 'English', 2: 'Hindi', 3: 'Bangali', 4: 'Tamil', 5: 'MIL'}
+>>> id(k)
+66294600
+>>> k[0]='computer'
+>>> k
+{1: 'English', 2: 'Hindi', 3: 'Bangali', 4: 'Tamil', 5: 'MIL', 0: 'computer'}
+>>> id(k)
+66294600
+>>> k.pop(0)
+'computer'
+>>> id(k)
+66294600
+>>> 
 #Here,we can see from the above example that whenever we changes the values in List and Dictionaries but they pointing to the same memory location even after actual list and dictionaries were changed.
 #Hence proved that List and Dictionaries are Mutable in Nature.
 Thank You :)
